@@ -4,7 +4,7 @@ Pokedex app with open api using getx
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a open source for people to learn with same api integration using getx.
 
 A few resources to get you started if this is your first Flutter project:
 
