@@ -54,7 +54,7 @@ class AppTextTheme {
     bodyMedium: GoogleFonts.exo2(
         color: AppColors.textLightColor,
         fontSize: 16,
-        fontWeight: FontWeight.normal
+        fontWeight: FontWeight.w600
     ),
     bodySmall: GoogleFonts.exo2(
         color: AppColors.textLightColor,
@@ -111,7 +111,7 @@ class AppTextTheme {
     bodyMedium: GoogleFonts.exo2(
         color: AppColors.textDarkColor,
         fontSize: 16,
-        fontWeight: FontWeight.normal
+        fontWeight: FontWeight.w600
     ),
     bodySmall: GoogleFonts.exo2(
         color: AppColors.textDarkColor,

@@ -12,6 +12,7 @@ class HomeController extends GetxController {
   PageController pageController = PageController(viewportFraction: 0.5);
   final storageBox = GetStorage();
   var currentPageValue = 0.0.obs;
+  var selectedPokeList = 0.obs;
   var isDarkMode = false.obs;
   var currentPageIndex = 1.obs;
   var pokeList = <Pokemon>[].obs;
@@ -36,6 +37,11 @@ class HomeController extends GetxController {
     update();
   }
 
+  void selectedIndex(int index) {
+    selectedPokeList.value = index;
+    update();
+  }
+
 
   void getPokeDex() async {
     try {
@@ -51,16 +57,15 @@ class HomeController extends GetxController {
           // print("type name${typeList[i].name}");
         }
         typeList.value = allTypeList.toSet().toList();
-        print("type list${typeList.length}");
         update();
       }
     } catch (e) {
-      print("Exception:${e.toString()}");
+      log("Exception:${e.toString()}");
     }
   }
 
   void filterPokeListByType(String query) {
-    print("SEARCH QUERY:$query");
+    log("SEARCH QUERY:$query");
     filterPokeList.clear();
     for(int i=0;i<pokeList.length;i++){
       var element = pokeList[i];
@@ -71,7 +76,7 @@ class HomeController extends GetxController {
       if (filter.isNotEmpty) {
         // Add the Pokémon to the filtered list only if it has the specified type
         filterPokeList.add(element);
-        print("SEARCH FILTER:${filterPokeList.length}");
+        log("SEARCH FILTER:${filterPokeList.length}");
         update();
       }
     }
